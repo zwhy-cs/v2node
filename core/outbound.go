@@ -14,8 +14,8 @@ func buildDefaultOutbound() (*core.OutboundHandlerConfig, error) {
 	outboundDetourConfig := &conf.OutboundDetourConfig{}
 	outboundDetourConfig.Protocol = "freedom"
 	outboundDetourConfig.Tag = "Default"
-	//sendthrough := "origin"
-	//outboundDetourConfig.SendThrough = &sendthrough
+	sendthrough := "0.0.0.0"
+	outboundDetourConfig.SendThrough = &sendthrough
 
 	proxySetting := &conf.FreedomConfig{
 		DomainStrategy: "UseIPv4",
