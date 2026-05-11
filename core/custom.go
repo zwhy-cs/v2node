@@ -49,7 +49,7 @@ func GetCustomConfig(infos []*panel.NodeInfo) (*dns.Config, []*core.OutboundHand
 		Servers: []*coreConf.NameServerConfig{
 			{
 				Address: &coreConf.Address{
-					Address: xnet.ParseAddress("localhost"),
+					Address: xnet.ParseAddress("8.8.8.8"),
 				},
 			},
 		},
