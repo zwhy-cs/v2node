@@ -45,7 +45,6 @@ func hasOutboundWithTag(list []*core.OutboundHandlerConfig, tag string) bool {
 func GetCustomConfig(infos []*panel.NodeInfo) (*dns.Config, []*core.OutboundHandlerConfig, *router.Config, error) {
 	//dns
 	queryStrategy := "UseIPv4"
-	disableFallback := true
 	coreDnsConfig := &coreConf.DNSConfig{
 		Servers: []*coreConf.NameServerConfig{
 			{
@@ -60,7 +59,6 @@ func GetCustomConfig(infos []*panel.NodeInfo) (*dns.Config, []*core.OutboundHand
 			},
 		},
 		QueryStrategy: queryStrategy,
-		DisableFallback: disableFallback,
 	}
 	//outbound
 	defaultoutbound, _ := buildDefaultOutbound()
