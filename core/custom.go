@@ -45,16 +45,14 @@ func hasOutboundWithTag(list []*core.OutboundHandlerConfig, tag string) bool {
 func GetCustomConfig(infos []*panel.NodeInfo) (*dns.Config, []*core.OutboundHandlerConfig, *router.Config, error) {
 	//dns
 	queryStrategy := "UseIPv4"
+	if !hasPublicIPv6() {
+		queryStrategy = "UseIPv4"
+	}
 	coreDnsConfig := &coreConf.DNSConfig{
 		Servers: []*coreConf.NameServerConfig{
 			{
 				Address: &coreConf.Address{
-					Address: xnet.ParseAddress("8.8.8.8"),
-				},
-			},
-			{
-				Address: &coreConf.Address{
-					Address: xnet.ParseAddress("8.8.4.4"),
+					Address: xnet.ParseAddress("localhost"),
 				},
 			},
 		},
