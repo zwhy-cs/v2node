@@ -52,6 +52,11 @@ func GetCustomConfig(infos []*panel.NodeInfo) (*dns.Config, []*core.OutboundHand
 					Address: xnet.ParseAddress("8.8.8.8"),
 				},
 			},
+			{
+				Address: &coreConf.Address{
+					Address: xnet.ParseAddress("8.8.4.4"),
+				},
+			},
 		},
 		QueryStrategy: queryStrategy,
 	}
