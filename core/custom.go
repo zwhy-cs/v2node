@@ -59,8 +59,8 @@ func GetCustomConfig(infos []*panel.NodeInfo) (*dns.Config, []*core.OutboundHand
 				},
 			},
 		},
-		QueryStrategy:   queryStrategy,
-		DisableFallback: &disableFallback,
+		QueryStrategy: queryStrategy,
+		DisableFallback: disableFallback,
 	}
 	//outbound
 	defaultoutbound, _ := buildDefaultOutbound()
