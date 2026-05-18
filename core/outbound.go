@@ -18,7 +18,7 @@ func buildDefaultOutbound() (*core.OutboundHandlerConfig, error) {
 	// outboundDetourConfig.SendThrough = &sendthrough
 
 	proxySetting := &conf.FreedomConfig{
-		DomainStrategy: "ForceIPv4",
+		DomainStrategy: "UseIPv4v6",
 	}
 	var setting json.RawMessage
 	setting, err := json.Marshal(proxySetting)
